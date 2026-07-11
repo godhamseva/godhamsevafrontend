@@ -96,7 +96,7 @@ export default function SubcategoriesTab() {
                 subcategories.map((sub) => (
                   <tr key={sub.id} className="hover:bg-gray-50 transition">
                     <td className="py-4 px-6 font-semibold text-gray-500">#{sub.id}</td>
-                    <td className="py-4 px-6 font-bold text-white">{sub.name?.en || 'N/A'}</td>
+                    <td className="py-4 px-6 font-bold text-[var(--apt-navy)]">{sub.name?.en || 'N/A'}</td>
                     <td className="py-4 px-6">
                       <span className="bg-gray-50 text-gray-600 border border-gray-200 px-2 py-1 rounded-sm text-[10px] font-bold uppercase">
                         {sub.category?.name?.en || `Category #${sub.categoryId}`}

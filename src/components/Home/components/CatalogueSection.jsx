@@ -28,7 +28,7 @@ function CatalogueSection() {
     },
     {
       id: 3,
-      title: 'CORDLESS',
+      title: 'CORDLESS TOOLS',
       count: '850+ ITEMS',
       description: 'Next-gen battery-powered tools including impact drills, wrenches, and chainsaws.',
       link: '/categories/cordless',
@@ -40,7 +40,7 @@ function CatalogueSection() {
     },
     {
       id: 4,
-      title: 'AGRICULTURE MACHINES',
+      title: 'AGRICULTURE EQUIPMENTS',
       count: '950+ ITEMS',
       description: 'Power sprayers, tillers, and specialized harvesters for modern farming.',
       link: '/categories/agriculture-machines',

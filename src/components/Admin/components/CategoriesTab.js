@@ -95,7 +95,7 @@ export default function CategoriesTab() {
                 categories.map((category) => (
                   <tr key={category.id} className="hover:bg-gray-50 transition">
                     <td className="py-4 px-6 font-semibold text-gray-500">#{category.id}</td>
-                    <td className="py-4 px-6 font-bold text-white">{category.name?.en || 'N/A'}</td>
+                    <td className="py-4 px-6 font-bold text-[var(--apt-navy)]">{category.name?.en || 'N/A'}</td>
                     <td className="py-4 px-6 text-gray-500 font-mono">{category.slug || '-'}</td>
                     <td className="py-4 px-6 text-gray-500 truncate max-w-xs">{category.description?.en || '-'}</td>
                     <td className="py-4 px-6 text-right">
