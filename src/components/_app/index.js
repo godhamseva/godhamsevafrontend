@@ -4,9 +4,23 @@ import 'nprogress/nprogress.css';
 import CustomAnimation from '@/common/components/custom-animation';
 import SEOTags from '@/common/SEOTags';
 import GodhamHead from '@/components/Godham/GodhamHead';
+import GodhamLoader from '@/components/Godham/GodhamLoader';
 import withStore from './store';
+
+function isGodhamPath(pathname) {
+  return pathname === '/' || pathname === '/gallery' || pathname.startsWith('/godham');
+}
+
+// The loading fallback below has to decide its branding itself (via useRouter)
+// rather than being hardcoded, since next/dynamic's `loading` component is
+// what actually renders — for every route — until LayoutWrapper's chunk loads.
+function AppLoadingFallback() {
+  const router = useRouter();
+  return isGodhamPath(router.pathname) ? <GodhamLoader /> : <CustomAnimation />;
+}
+
 const LayoutWrapper = dynamic(() => import('@/components/app-wrapper'), {
-  loading: () => <CustomAnimation />,
+  loading: () => <AppLoadingFallback />,
   ssr: false,
 });
 
@@ -39,7 +53,7 @@ export const metadata = {
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const isGodham = router.pathname === '/' || router.pathname === '/gallery' || router.pathname.startsWith('/godham');
+  const isGodham = isGodhamPath(router.pathname);
 
   return (
     <>

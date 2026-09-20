@@ -1,4 +1,5 @@
 import CustomAnimation from '@/common/components/custom-animation';
+import GodhamLoader from '@/components/Godham/GodhamLoader';
 import { StateProvider } from '@/store';
 import { Suspense, useEffect } from 'react';
 import { SidebarInset, SidebarProvider } from '../ui/sidebar';
@@ -33,7 +34,7 @@ export default function LayoutWrapper({ children }) {
   if (isGodham) {
     // Godham Trust is a fully self-contained site with its own header/footer —
     // skip Apt World's global chrome entirely.
-    return <Suspense fallback={<CustomAnimation />}>{children}</Suspense>;
+    return <Suspense fallback={<GodhamLoader />}>{children}</Suspense>;
   }
 
   if (isAdmin) {
