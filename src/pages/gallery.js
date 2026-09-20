@@ -30,7 +30,7 @@ export default function GodhamGalleryPage() {
 
   return (
     <>
-      <GodhamHead title="Gallery — Godham Trust" description="Photos from daily life at Godham Trust's goshalas." />
+      <GodhamHead title="Gallery — Godham Trust" description="Photos from daily life at Godham Trust's goshalas." path="/gallery" />
       <GodhamLayout>
         <section className="gallery-page-head">
           <div className="wrap section-head">

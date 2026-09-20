@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchQr } from '../lib/api';
+import { GODHAM_EMAIL } from '../constants';
 
 export default function QRModal({ open, onClose }) {
   const [qr, setQr] = useState(undefined); // undefined = loading, null = none, object = found
@@ -33,7 +34,7 @@ export default function QRModal({ open, onClose }) {
           {qr && <img src={qr.url} alt="Godham Trust donation UPI QR code" />}
         </div>
         {qr === null && <p className="hint" style={{ marginTop: -8, marginBottom: 0 }}>Sample QR shown — upload the real one from the admin panel.</p>}
-        <div className="qr-upi">Godham Trust · info@godhamtrust.org</div>
+        <div className="qr-upi">Godham Trust · {GODHAM_EMAIL}</div>
       </div>
     </div>
   );
