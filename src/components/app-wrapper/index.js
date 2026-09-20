@@ -15,6 +15,7 @@ NProgress.configure({ showSpinner: false, trickleSpeed: 200, minimum: 0.08 });
 export default function LayoutWrapper({ children }) {
   const router = useRouter();
   const isAdmin = router.pathname.startsWith('/admin');
+  const isGodham = router.pathname === '/' || router.pathname === '/gallery' || router.pathname.startsWith('/godham');
 
   useEffect(() => {
     const handleStart = () => NProgress.start();
@@ -28,6 +29,12 @@ export default function LayoutWrapper({ children }) {
       router.events.off('routeChangeError',    handleDone);
     };
   }, [router]);
+
+  if (isGodham) {
+    // Godham Trust is a fully self-contained site with its own header/footer —
+    // skip Apt World's global chrome entirely.
+    return <Suspense fallback={<CustomAnimation />}>{children}</Suspense>;
+  }
 
   if (isAdmin) {
     return (

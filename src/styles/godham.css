@@ -1,0 +1,367 @@
+/* Godham Trust — scoped styles. Every rule is namespaced under .godham-site
+   so this never leaks into (or is affected by) the rest of the app. */
+
+.godham-site {
+  --ink: #2b2013;
+  --brown: #5a3a1f;
+  --brown-deep: #3a2410;
+  --saffron: #e2822f;
+  --saffron-deep: #c26a1e;
+  --green: #5c7c32;
+  --green-deep: #42601f;
+  --cream: #faf5e8;
+  --paper: #fffdf7;
+  --line: rgba(58, 36, 16, 0.14);
+
+  --display: 'Fraunces', serif;
+  --body: 'Work Sans', sans-serif;
+  --mono: 'Space Mono', monospace;
+  --deva: 'Tiro Devanagari Hindi', serif;
+
+  --maxw: 1180px;
+
+  font-family: var(--body);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.godham-site *,
+.godham-site *::before,
+.godham-site *::after {
+  box-sizing: border-box;
+}
+
+.godham-site img { max-width: 100%; display: block; }
+.godham-site a { color: inherit; text-decoration: none; }
+.godham-site ul { list-style: none; margin: 0; padding: 0; }
+.godham-site h1, .godham-site h2, .godham-site h3, .godham-site h4 { margin: 0; }
+.godham-site p { margin: 0; }
+.godham-site button { font-family: inherit; }
+
+.godham-site .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+.godham-site section { position: relative; }
+
+.godham-site h1, .godham-site h2, .godham-site h3, .godham-site h4 {
+  font-family: var(--display); font-weight: 600; line-height: 1.1; letter-spacing: -0.01em;
+}
+.godham-site .deva { font-family: var(--deva); }
+.godham-site .eyebrow {
+  font-family: var(--mono); text-transform: uppercase; font-size: 12.5px;
+  letter-spacing: 0.14em; color: var(--saffron-deep); font-weight: 700;
+  display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.godham-site .eyebrow::before { content: ''; width: 22px; height: 2px; background: var(--saffron-deep); display: inline-block; }
+
+.godham-site .btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--body); font-weight: 600; font-size: 15px;
+  padding: 13px 26px; border-radius: 3px; cursor: pointer; border: 1.5px solid transparent;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+}
+.godham-site .btn-primary { background: var(--saffron); color: #fff; }
+.godham-site .btn-primary:hover { background: var(--saffron-deep); transform: translateY(-2px); box-shadow: 0 10px 22px -8px rgba(226,130,47,0.55); }
+.godham-site .btn-outline { border-color: var(--brown); color: var(--brown); background: transparent; }
+.godham-site .btn-outline:hover { background: var(--brown); color: #fff; transform: translateY(-2px); }
+.godham-site .btn-light { border-color: rgba(255,255,255,0.55); color: #fff; }
+.godham-site .btn-light:hover { background: #fff; color: var(--brown-deep); }
+.godham-site .btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none !important; }
+
+.godham-site .garland {
+  height: 26px; width: 100%;
+  background-image: radial-gradient(circle at 10px 6px, var(--saffron) 0 5px, transparent 6px);
+  background-size: 26px 26px;
+  background-repeat: repeat-x;
+  background-position: center 4px;
+  position: relative;
+  opacity: 0.9;
+}
+.godham-site .garland::after {
+  content: ''; position: absolute; left: 0; right: 0; top: 9px; height: 1px;
+  background: repeating-linear-gradient(90deg, var(--green) 0 14px, transparent 14px 26px);
+}
+
+.godham-site .topbar { background: var(--brown-deep); color: rgba(255,255,255,0.82); font-size: 13px; }
+.godham-site .topbar .wrap { display: flex; justify-content: space-between; align-items: center; padding: 9px 28px; }
+.godham-site .topbar a { opacity: 0.9; transition: opacity .15s; }
+.godham-site .topbar a:hover { opacity: 1; color: var(--saffron); }
+.godham-site .topbar .tb-links { display: flex; gap: 22px; }
+.godham-site .topbar .tb-social { display: flex; gap: 14px; }
+
+.godham-site header.site { background: var(--paper); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; }
+.godham-site .nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 28px; }
+.godham-site .logo { display: flex; align-items: center; gap: 12px; font-family: var(--display); font-weight: 700; font-size: 22px; color: var(--brown-deep); }
+.godham-site .logo img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
+.godham-site .logo .sub { display: block; font-family: var(--body); font-weight: 600; font-size: 11px; letter-spacing: 0.06em; color: var(--saffron-deep); text-transform: uppercase; margin-top: 2px; }
+.godham-site .navlinks { display: flex; gap: 28px; align-items: center; }
+.godham-site .navlinks > li > a { font-weight: 600; font-size: 14.5px; letter-spacing: 0.01em; color: var(--brown-deep); position: relative; padding: 6px 2px; }
+.godham-site .navlinks > li > a::after { content: ''; position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--saffron); transition: width .2s; }
+.godham-site .navlinks > li > a:hover::after { width: 100%; }
+.godham-site .nav-actions { display: flex; align-items: center; gap: 14px; }
+.godham-site .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+.godham-site .hamburger span { width: 26px; height: 2.5px; background: var(--brown-deep); }
+
+.godham-site .hero {
+  background:
+    linear-gradient(120deg, rgba(58,36,16,0.86), rgba(58,36,16,0.55) 55%, rgba(58,36,16,0.82)),
+    url('https://images.pexels.com/photos/33450975/pexels-photo-33450975.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
+  color: #fff; overflow: hidden;
+}
+.godham-site .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; padding: 80px 28px 66px; max-width: var(--maxw); margin: 0 auto; }
+.godham-site .hero h1 { font-size: clamp(36px,4.8vw,58px); color: #fff; margin-bottom: 20px; }
+.godham-site .hero h1 em { font-style: normal; color: var(--saffron); }
+.godham-site .hero p.lead { font-size: 18px; color: rgba(255,255,255,0.82); max-width: 520px; margin-bottom: 30px; }
+.godham-site .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 38px; }
+.godham-site .hero-stats { display: flex; gap: 30px; flex-wrap: wrap; }
+.godham-site .hero-stats div { border-left: 2px solid var(--saffron); padding-left: 14px; }
+.godham-site .hero-stats .num { font-family: var(--mono); font-size: 24px; font-weight: 700; color: #fff; }
+.godham-site .hero-stats .lbl { font-size: 12px; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.godham-site .hero-art { position: relative; max-width: 360px; margin: 0 auto; }
+.godham-site .hero-photo-card { background: #fff; padding: 10px 10px 46px; border-radius: 4px; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5); transform: rotate(2deg); }
+.godham-site .hero-photo-card img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 2px; }
+.godham-site .hero-photo-card span { position: absolute; bottom: 14px; left: 22px; right: 22px; font-family: var(--display); font-style: italic; color: var(--brown-deep); font-size: 14px; }
+
+.godham-site .impact { background: var(--paper); padding: 56px 0 44px; border-bottom: 1px solid var(--line); }
+.godham-site .impact-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 34px; gap: 20px; flex-wrap: wrap; }
+.godham-site .impact-head p { max-width: 480px; color: #4a4033; }
+.godham-site .impact-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
+.godham-site .impact-grid > div { padding: 0 26px; border-left: 1px solid var(--line); }
+.godham-site .impact-grid > div:first-child { border-left: none; padding-left: 0; }
+.godham-site .impact-grid .num { font-family: var(--display); font-size: 46px; font-weight: 600; color: var(--brown-deep); display: flex; align-items: baseline; gap: 4px; }
+.godham-site .impact-grid .num .plus { color: var(--saffron-deep); font-size: 26px; }
+.godham-site .impact-grid .lbl { font-size: 14px; color: #5b5245; margin-top: 6px; }
+
+.godham-site .about { padding: 82px 0; background: var(--cream); }
+.godham-site .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: start; }
+.godham-site .about h2 { font-size: clamp(28px,3.4vw,40px); margin-bottom: 20px; }
+.godham-site .about-copy p { color: #413425; margin-bottom: 16px; font-size: 16px; }
+.godham-site .about-copy p:last-of-type { margin-bottom: 24px; }
+.godham-site .quote-block { background: var(--paper); border: 1px solid var(--line); border-left: 4px solid var(--saffron); padding: 24px 26px; border-radius: 2px; margin-top: 8px; }
+.godham-site .quote-block p { font-family: var(--display); font-size: 18px; font-style: italic; color: var(--brown-deep); margin: 0 0 10px; }
+.godham-site .quote-block span { font-family: var(--mono); font-size: 12px; color: #8b8069; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.godham-site .about-art { margin-bottom: 24px; }
+.godham-site .about-art svg { width: 100%; max-width: 340px; height: auto; }
+
+.godham-site .gallery { padding: 88px 0; background: var(--cream); }
+.godham-site .gallery-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.godham-site .gallery-card { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; }
+.godham-site .gallery-card:hover { transform: translateY(-4px); box-shadow: 0 16px 30px -14px rgba(58,36,16,0.25); }
+.godham-site .gallery-card .art { aspect-ratio: 4/3; background: linear-gradient(160deg, #f3ead6, #ece0c6); display: flex; align-items: center; justify-content: center; padding: 0; overflow: hidden; }
+.godham-site .gallery-card .art img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
+.godham-site .gallery-card:hover .art img { transform: scale(1.05); }
+.godham-site .gallery-card .cap { padding: 16px 18px 20px; }
+.godham-site .gallery-card .cap h4 { font-size: 15.5px; color: var(--brown-deep); margin-bottom: 5px; font-family: var(--display); font-weight: 600; }
+.godham-site .gallery-card .cap p { font-size: 13px; color: #6b5f4e; }
+.godham-site .gallery-empty { padding: 40px; text-align: center; color: #6b5f4e; border: 1px dashed var(--line); border-radius: 6px; background: var(--paper); }
+
+.godham-site .programs { padding: 88px 0; background: var(--paper); }
+.godham-site .section-head { max-width: 640px; margin-bottom: 48px; }
+.godham-site .section-head h2 { font-size: clamp(28px,3.4vw,40px); }
+.godham-site .section-head p { color: #4a4033; margin-top: 14px; font-size: 16.5px; }
+
+.godham-site .prog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--line); border: 1px solid var(--line); }
+.godham-site .prog-card { background: var(--paper); padding: 34px 28px; transition: background .2s; }
+.godham-site .prog-card:hover { background: var(--cream); }
+.godham-site .prog-icon { width: 44px; height: 44px; margin-bottom: 20px; }
+.godham-site .prog-card h3 { font-size: 19px; margin-bottom: 10px; color: var(--brown-deep); }
+.godham-site .prog-card p { color: #55483a; font-size: 14.6px; margin-bottom: 14px; }
+.godham-site .prog-card a { font-family: var(--mono); font-size: 12.3px; font-weight: 700; color: var(--saffron-deep); text-transform: uppercase; letter-spacing: 0.05em; }
+.godham-site .prog-card a:hover { text-decoration: underline; }
+
+.godham-site .seva { padding: 88px 0; background: var(--brown-deep); color: #fff; }
+.godham-site .seva .section-head p { color: rgba(255,255,255,0.7); }
+.godham-site .seva .section-head h2 { color: #fff; }
+.godham-site .seva-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.14); border-radius: 3px; overflow: hidden; }
+.godham-site .seva-col { background: rgba(255,255,255,0.04); padding: 6px 0; }
+.godham-site .seva-row { display: flex; justify-content: space-between; padding: 14px 26px; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 14.5px; }
+.godham-site .seva-row:last-child { border-bottom: none; }
+.godham-site .seva-row span:first-child { color: rgba(255,255,255,0.85); }
+.godham-site .seva-row span:last-child { font-family: var(--mono); color: var(--saffron); font-weight: 700; }
+.godham-site .seva-note { margin-top: 26px; font-size: 13.5px; color: rgba(255,255,255,0.6); max-width: 640px; }
+
+.godham-site .donate-sec { padding: 88px 0; background: var(--cream); }
+.godham-site .donate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: flex-start; }
+.godham-site .donate-card { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 34px; }
+.godham-site .donate-card h3 { font-size: 20px; margin-bottom: 6px; color: var(--brown-deep); }
+.godham-site .donate-card > p { font-size: 13.5px; color: #6b5f4e; margin-bottom: 22px; }
+.godham-site .amount-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 18px; }
+.godham-site .amount-btn {
+  border: 1.5px solid var(--line); background: var(--cream); padding: 14px 8px; text-align: center;
+  font-family: var(--mono); font-weight: 700; font-size: 15px; border-radius: 4px; cursor: pointer;
+  color: var(--brown-deep); transition: all .15s;
+}
+.godham-site .amount-btn.active, .godham-site .amount-btn:hover { border-color: var(--saffron); background: rgba(226,130,47,0.1); color: var(--saffron-deep); }
+.godham-site .donate-card input[type=text], .godham-site .donate-card input[type=email], .godham-site .donate-card input[type=tel] {
+  width: 100%; padding: 13px 14px; border: 1px solid var(--line); border-radius: 4px; font-family: var(--body);
+  font-size: 14.5px; margin-bottom: 12px; background: var(--paper);
+}
+.godham-site .donate-benefits { list-style: none; margin-top: 6px; }
+.godham-site .donate-benefits li { padding: 10px 0; border-bottom: 1px dashed var(--line); font-size: 14.5px; color: #413425; display: flex; gap: 10px; }
+.godham-site .donate-benefits li::before { content: '✓'; color: var(--green); font-weight: 700; }
+
+.godham-site .donors { padding: 80px 0; background: var(--paper); }
+.godham-site .donor-list { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.godham-site .donor-row { background: var(--paper); display: flex; align-items: center; gap: 14px; padding: 16px 22px; }
+.godham-site .donor-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: var(--mono); flex-shrink: 0; }
+.godham-site .donor-info { flex: 1; font-size: 14px; }
+.godham-site .donor-info b { color: var(--brown-deep); }
+.godham-site .donor-amt { font-family: var(--mono); font-weight: 700; color: var(--saffron-deep); font-size: 14px; }
+
+.godham-site .locate { padding: 88px 0; background: var(--paper); }
+.godham-site .locate-map-wrap {
+  position: relative; width: 100%; aspect-ratio: 16/7; border-radius: 8px; overflow: hidden;
+  border: 1px solid var(--line); box-shadow: 0 20px 45px -25px rgba(58,36,16,0.4);
+}
+.godham-site .locate-map-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.godham-site .locate-map-overlay {
+  position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: flex-start;
+  padding: 20px; background: linear-gradient(0deg, rgba(43,32,19,0.55), transparent 55%);
+  transition: background .2s ease;
+}
+.godham-site .locate-map-overlay:hover { background: linear-gradient(0deg, rgba(43,32,19,0.68), transparent 60%); }
+.godham-site .locate-map-overlay span {
+  background: var(--saffron); color: #fff; font-weight: 700; font-size: 14px;
+  padding: 12px 20px; border-radius: 50px; box-shadow: 0 10px 22px -8px rgba(226,130,47,0.6);
+}
+
+.godham-site .accred { padding: 76px 0; background: var(--cream); }
+.godham-site .accred-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 26px; }
+.godham-site .accred-card { border: 1px solid var(--line); background: var(--paper); padding: 24px 20px; text-align: left; }
+.godham-site .accred-card .badge { width: 36px; height: 36px; border-radius: 50%; background: var(--saffron); margin-bottom: 14px; display: flex; align-items: center; justify-content: center; color: #fff; font-family: var(--mono); font-weight: 700; font-size: 12px; }
+.godham-site .accred-card h4 { font-size: 15px; margin-bottom: 8px; color: var(--brown-deep); }
+.godham-site .accred-card p { font-size: 13px; color: #6b5f4e; }
+
+.godham-site .cta-band { background: linear-gradient(120deg, var(--saffron), var(--green)); color: #fff; padding: 56px 0; }
+.godham-site .cta-band .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.godham-site .cta-band h3 { font-size: clamp(23px,3vw,30px); max-width: 540px; }
+.godham-site .cta-form { display: flex; gap: 0; max-width: 420px; width: 100%; }
+.godham-site .cta-form input { flex: 1; padding: 15px 16px; border: none; font-family: var(--body); font-size: 14.5px; border-radius: 2px 0 0 2px; outline: none; }
+.godham-site .cta-form button { border-radius: 0 2px 2px 0; border: none; background: var(--brown-deep); color: #fff; padding: 0 24px; font-weight: 700; cursor: pointer; font-size: 14px; }
+.godham-site .cta-form button:hover { background: #241505; }
+
+.godham-site footer { background: var(--brown-deep); color: rgba(255,255,255,0.72); padding: 68px 0 0; }
+.godham-site .foot-grid { display: grid; grid-template-columns: 1.4fr repeat(4,1fr); gap: 30px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+.godham-site .foot-brand .logo { color: #fff; }
+.godham-site .foot-brand p { margin: 16px 0 20px; font-size: 14px; max-width: 280px; color: rgba(255,255,255,0.6); }
+.godham-site .foot-social { display: flex; gap: 12px; }
+.godham-site .foot-social a { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+.godham-site .foot-social a:hover { background: var(--saffron); border-color: var(--saffron); color: var(--brown-deep); }
+.godham-site .foot-col h5 { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--saffron); margin-bottom: 18px; }
+.godham-site .foot-col li { margin-bottom: 11px; font-size: 14px; }
+.godham-site .foot-col a:hover { color: #fff; }
+.godham-site .foot-bottom { display: flex; justify-content: space-between; padding: 24px 0; font-size: 13px; color: rgba(255,255,255,0.5); flex-wrap: wrap; gap: 10px; }
+
+.godham-site .float-donate {
+  position: fixed; right: 26px; bottom: 26px; z-index: 60;
+  background: var(--saffron); color: #fff; padding: 15px 22px; border-radius: 50px;
+  font-weight: 700; font-size: 14px; box-shadow: 0 12px 28px -8px rgba(226,130,47,0.6);
+  display: flex; align-items: center; gap: 8px; border: none; cursor: pointer;
+}
+.godham-site .float-donate:hover { background: var(--saffron-deep); }
+.godham-site .float-whatsapp {
+  position: fixed; left: 26px; bottom: 26px; z-index: 60;
+  background: #25D366; color: #fff; width: 52px; height: 52px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-size: 24px;
+  box-shadow: 0 12px 28px -8px rgba(37,211,102,0.6);
+}
+
+/* ---------- QR donation modal ---------- */
+.godham-site .qr-overlay {
+  position: fixed; inset: 0; background: rgba(43,32,19,0.72); z-index: 100;
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.godham-site .qr-modal {
+  background: var(--paper); border-radius: 8px; max-width: 520px; width: 100%;
+  padding: 38px 36px 32px; text-align: center; position: relative;
+  box-shadow: 0 30px 70px -20px rgba(0,0,0,0.5);
+}
+.godham-site .qr-modal .qr-close {
+  position: absolute; top: 14px; right: 16px; background: none; border: none;
+  font-size: 22px; color: var(--brown); cursor: pointer; line-height: 1;
+}
+.godham-site .qr-modal h3 { font-size: 23px; color: var(--brown-deep); margin-bottom: 8px; }
+.godham-site .qr-modal p.hint { font-size: 14px; color: #6b5f4e; margin-bottom: 20px; }
+.godham-site .qr-image-wrap {
+  background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 20px;
+  display: flex; align-items: center; justify-content: center; min-height: 340px; margin-bottom: 18px;
+}
+.godham-site .qr-image-wrap img { width: 100%; max-width: 380px; }
+.godham-site .qr-placeholder { color: #8b8069; font-size: 13px; padding: 40px 10px; }
+.godham-site .qr-upi { font-family: var(--mono); font-size: 13px; color: var(--brown-deep); background: var(--cream); padding: 10px 12px; border-radius: 4px; }
+
+/* ---------- Admin panel ---------- */
+.godham-site .admin-shell { min-height: 100vh; background: var(--cream); padding: 40px 0 80px; }
+.godham-site .admin-login { max-width: 380px; margin: 90px auto 0; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 34px; text-align: center; }
+.godham-site .admin-login h1 { font-size: 24px; margin-bottom: 8px; color: var(--brown-deep); }
+.godham-site .admin-login p { font-size: 13.5px; color: #6b5f4e; margin-bottom: 22px; }
+.godham-site .admin-login input {
+  width: 100%; padding: 13px 14px; border: 1px solid var(--line); border-radius: 4px;
+  font-size: 14.5px; margin-bottom: 14px; background: var(--cream); font-family: var(--body);
+}
+.godham-site .admin-error { color: #b23a2f; font-size: 13px; margin-bottom: 12px; }
+.godham-site .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 34px; flex-wrap: wrap; gap: 14px; }
+.godham-site .admin-header h1 { font-size: 26px; color: var(--brown-deep); }
+.godham-site .admin-panel { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 28px; margin-bottom: 28px; }
+.godham-site .admin-panel h2 { font-size: 18px; color: var(--brown-deep); margin-bottom: 6px; }
+.godham-site .admin-panel > p.hint { font-size: 13px; color: #6b5f4e; margin-bottom: 18px; }
+.godham-site .admin-dropzone {
+  border: 2px dashed var(--line); border-radius: 6px; padding: 30px; text-align: center;
+  color: #6b5f4e; font-size: 14px; margin-bottom: 16px; background: var(--cream);
+}
+.godham-site .admin-caption-input {
+  width: 100%; padding: 11px 13px; border: 1px solid var(--line); border-radius: 4px;
+  font-size: 14px; margin-bottom: 12px; font-family: var(--body); background: var(--paper);
+}
+.godham-site .admin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 14px; margin-top: 20px; }
+.godham-site .admin-thumb { position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 1; background: var(--cream); }
+.godham-site .admin-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.godham-site .admin-thumb .thumb-del {
+  position: absolute; top: 6px; right: 6px; background: rgba(43,32,19,0.75); color: #fff;
+  border: none; width: 26px; height: 26px; border-radius: 50%; cursor: pointer; font-size: 13px;
+}
+.godham-site .admin-qr-current { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; margin-bottom: 20px; }
+.godham-site .admin-qr-current img { width: 140px; height: 140px; object-fit: contain; border: 1px solid var(--line); border-radius: 6px; background: #fff; padding: 8px; }
+.godham-site .admin-status { font-size: 13px; margin-top: 10px; }
+.godham-site .admin-status.ok { color: var(--green-deep); }
+.godham-site .admin-status.err { color: #b23a2f; }
+.godham-site .admin-logout { font-family: var(--mono); font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brown-deep); border: 1.5px solid var(--brown); border-radius: 3px; padding: 9px 16px; background: transparent; cursor: pointer; }
+.godham-site .admin-logout:hover { background: var(--brown); color: #fff; }
+
+/* ---------- Gallery page ---------- */
+.godham-site .gallery-page-head { padding: 56px 0 10px; background: var(--paper); }
+.godham-site .full-gallery-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.godham-site .lightbox-overlay { position: fixed; inset: 0; background: rgba(20,14,7,0.9); z-index: 110; display: flex; align-items: center; justify-content: center; padding: 30px; }
+.godham-site .lightbox-overlay img { max-width: 90vw; max-height: 85vh; border-radius: 4px; }
+.godham-site .lightbox-close { position: absolute; top: 22px; right: 28px; background: none; border: none; color: #fff; font-size: 30px; cursor: pointer; }
+
+@media (max-width: 980px) {
+  .godham-site .navlinks { position: fixed; top: 70px; left: 0; right: 0; background: var(--paper); flex-direction: column; align-items: flex-start; padding: 20px 28px; gap: 16px; border-bottom: 1px solid var(--line); transform: translateY(-130%); transition: transform .25s ease; }
+  .godham-site .navlinks.open { transform: translateY(0); }
+  .godham-site .hamburger { display: flex; }
+  .godham-site .hero-grid { grid-template-columns: 1fr; padding-top: 50px; }
+  .godham-site .impact-grid { grid-template-columns: repeat(2,1fr); row-gap: 28px; }
+  .godham-site .impact-grid > div:nth-child(3) { border-left: none; padding-left: 0; }
+  .godham-site .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .godham-site .prog-grid { grid-template-columns: 1fr 1fr; }
+  .godham-site .gallery-grid, .godham-site .full-gallery-grid { grid-template-columns: 1fr 1fr; }
+  .godham-site .seva-cols { grid-template-columns: 1fr; }
+  .godham-site .donate-grid { grid-template-columns: 1fr; }
+  .godham-site .donor-list { grid-template-columns: 1fr; }
+  .godham-site .accred-grid { grid-template-columns: 1fr 1fr; }
+  .godham-site .foot-grid { grid-template-columns: 1fr 1fr; gap: 34px 24px; }
+}
+@media (max-width: 620px) {
+  .godham-site .topbar .tb-links { display: none; }
+  .godham-site .prog-grid { grid-template-columns: 1fr; }
+  .godham-site .gallery-grid, .godham-site .full-gallery-grid { grid-template-columns: 1fr; }
+  .godham-site .accred-grid { grid-template-columns: 1fr; }
+  .godham-site .impact-grid { grid-template-columns: 1fr 1fr; }
+  .godham-site .foot-grid { grid-template-columns: 1fr; }
+  .godham-site .cta-band .wrap { flex-direction: column; align-items: flex-start; }
+  .godham-site .amount-grid { grid-template-columns: 1fr 1fr; }
+  .godham-site .admin-qr-current { flex-direction: column; align-items: flex-start; }
+  .godham-site .locate-map-wrap { aspect-ratio: 4/5; }
+}
