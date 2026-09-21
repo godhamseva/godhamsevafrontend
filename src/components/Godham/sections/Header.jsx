@@ -9,6 +9,7 @@ export default function Header() {
     { href: '/#about', label: 'About Us' },
     { href: '/#programs', label: 'Our Work' },
     { href: '/gallery', label: 'Gallery' },
+    { href: '/#vridhaashram', label: 'Vridhaashram' },
     { href: '/#seva', label: 'Gau Seva' },
     { href: '/#donate', label: 'Donate' },
     { href: '/#locate', label: 'Locate Us' },

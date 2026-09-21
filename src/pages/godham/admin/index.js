@@ -33,7 +33,7 @@ function LoginForm({ onSuccess }) {
   return (
     <div className="admin-login">
       <h1>Godham Admin</h1>
-      <p>Enter the admin password to manage gallery photos and the donation QR code.</p>
+      <p>Enter the admin password to manage gallery photos, Vridhaashram photos and the donation QR code.</p>
       {error && <div className="admin-error">{error}</div>}
       <form onSubmit={submit}>
         <input
@@ -52,13 +52,13 @@ function LoginForm({ onSuccess }) {
   );
 }
 
-function GalleryPanel({ password }) {
+function GalleryPanel({ password, category, title, hint, emptyHint }) {
   const [images, setImages] = useState([]);
   const [status, setStatus] = useState(null);
   const [caption, setCaption] = useState('');
   const [busy, setBusy] = useState(false);
 
-  const load = () => fetchGallery().then(setImages);
+  const load = () => fetchGallery(category).then(setImages);
 
   useEffect(() => { load(); }, []);
 
@@ -71,7 +71,7 @@ function GalleryPanel({ password }) {
     try {
       for (const file of files) {
         // caption only applied when uploading a single photo at a time
-        await uploadGodhamImage({ file, type: 'gallery', caption: files.length === 1 ? caption : '', password });
+        await uploadGodhamImage({ file, type: category, caption: files.length === 1 ? caption : '', password });
       }
       setCaption('');
       await load();
@@ -84,7 +84,7 @@ function GalleryPanel({ password }) {
   };
 
   const onDelete = async (publicId) => {
-    if (!confirm('Remove this photo from the gallery?')) return;
+    if (!confirm('Remove this photo?')) return;
     try {
       await deleteGodhamImage({ publicId, password });
       await load();
@@ -95,8 +95,8 @@ function GalleryPanel({ password }) {
 
   return (
     <div className="admin-panel">
-      <h2>Gallery Photos</h2>
-      <p className="hint">Upload photos to show on the public Gallery page and homepage. You can select multiple files at once.</p>
+      <h2>{title}</h2>
+      <p className="hint">{hint}</p>
       <input
         className="admin-caption-input"
         placeholder="Caption (only used when uploading a single photo)"
@@ -111,12 +111,12 @@ function GalleryPanel({ password }) {
       <div className="admin-grid">
         {images.map((img) => (
           <div className="admin-thumb" key={img.publicId}>
-            <img src={img.url} alt={img.caption || 'Gallery photo'} />
+            <img src={img.url} alt={img.caption || title} />
             <button className="thumb-del" onClick={() => onDelete(img.publicId)} aria-label="Delete">✕</button>
           </div>
         ))}
       </div>
-      {images.length === 0 && <p className="hint" style={{ marginTop: 16 }}>No photos uploaded yet — the public site is showing sample placeholder photos.</p>}
+      {images.length === 0 && <p className="hint" style={{ marginTop: 16 }}>{emptyHint}</p>}
     </div>
   );
 }
@@ -198,7 +198,20 @@ export default function GodhamAdminPage() {
                   <h1>Godham Trust — Admin</h1>
                   <button className="admin-logout" onClick={logout}>Log Out</button>
                 </div>
-                <GalleryPanel password={password} />
+                <GalleryPanel
+                  password={password}
+                  category="gallery"
+                  title="Gallery Photos"
+                  hint="Upload photos to show on the public Gallery page and homepage. You can select multiple files at once."
+                  emptyHint="No photos uploaded yet — the public site is showing sample placeholder photos."
+                />
+                <GalleryPanel
+                  password={password}
+                  category="vridhaashram"
+                  title="Vridhaashram Photos"
+                  hint="Upload photos of the old age home to show in the Vridhaashram section on the homepage."
+                  emptyHint="No photos uploaded yet — that section will show a placeholder note until you add some."
+                />
                 <QrPanel password={password} />
               </>
             )}

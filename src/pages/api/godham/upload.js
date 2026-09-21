@@ -1,5 +1,10 @@
 import { IncomingForm } from 'formidable';
-import cloudinary, { checkAdminPassword, GODHAM_GALLERY_FOLDER, GODHAM_QR_FOLDER } from '@/lib/godham/cloudinary';
+import cloudinary, {
+  checkAdminPassword,
+  GODHAM_GALLERY_FOLDER,
+  GODHAM_QR_FOLDER,
+  GODHAM_VRIDHAASHRAM_FOLDER,
+} from '@/lib/godham/cloudinary';
 
 export const config = {
   api: {
@@ -8,6 +13,12 @@ export const config = {
 };
 
 const MAX_FILE_SIZE = 8 * 1024 * 1024; // 8MB
+
+const UPLOAD_TARGETS = {
+  gallery: { folder: GODHAM_GALLERY_FOLDER, tag: 'godham_gallery' },
+  vridhaashram: { folder: GODHAM_VRIDHAASHRAM_FOLDER, tag: 'godham_vridhaashram' },
+  qr: { folder: GODHAM_QR_FOLDER, tag: 'godham_qr' },
+};
 
 function firstValue(value) {
   return Array.isArray(value) ? value[0] : value;
@@ -54,7 +65,8 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'No file received' });
   }
 
-  if (!['gallery', 'qr'].includes(type)) {
+  const target = UPLOAD_TARGETS[type];
+  if (!target) {
     return res.status(400).json({ error: 'Invalid upload type' });
   }
 
@@ -63,12 +75,10 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Only image files are allowed' });
   }
 
-  const folder = type === 'gallery' ? GODHAM_GALLERY_FOLDER : GODHAM_QR_FOLDER;
-
   try {
     const uploadResult = await cloudinary.uploader.upload(file.filepath, {
-      folder,
-      tags: [type === 'gallery' ? 'godham_gallery' : 'godham_qr'],
+      folder: target.folder,
+      tags: [target.tag],
       context: caption ? { caption } : undefined,
     });
 

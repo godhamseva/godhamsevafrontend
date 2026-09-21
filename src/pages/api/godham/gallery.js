@@ -1,9 +1,20 @@
-import cloudinary, { GODHAM_GALLERY_FOLDER } from '@/lib/godham/cloudinary';
+import cloudinary, { GODHAM_GALLERY_FOLDER, GODHAM_VRIDHAASHRAM_FOLDER } from '@/lib/godham/cloudinary';
+
+const FOLDERS_BY_CATEGORY = {
+  gallery: GODHAM_GALLERY_FOLDER,
+  vridhaashram: GODHAM_VRIDHAASHRAM_FOLDER,
+};
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
     res.setHeader('Allow', ['GET']);
     return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  const category = typeof req.query.category === 'string' ? req.query.category : 'gallery';
+  const folder = FOLDERS_BY_CATEGORY[category];
+  if (!folder) {
+    return res.status(400).json({ error: 'Invalid category' });
   }
 
   try {
@@ -12,7 +23,7 @@ export default async function handler(req, res) {
     // that lag made just-uploaded photos briefly invisible.
     const result = await cloudinary.api.resources({
       type: 'upload',
-      prefix: `${GODHAM_GALLERY_FOLDER}/`,
+      prefix: `${folder}/`,
       max_results: 200,
       context: true,
     });

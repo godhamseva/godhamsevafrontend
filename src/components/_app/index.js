@@ -30,14 +30,14 @@ const LayoutWrapper = dynamic(() => import('@/components/app-wrapper'), {
 // tags have to be rendered here instead, outside that ssr:false boundary.
 const GODHAM_META_BY_PATH = {
   '/': {
-    title: 'Godham Trust — गौ सेवा | Cow Shelter & Welfare',
+    title: 'Godham Trust — गौ सेवा | Cow Shelter & Old Age Home',
     description:
-      'Godham Trust runs cow shelters (goshalas) across India, providing rescue, daily feed, medical care and shelter to mother cows. Donate to support Gau Seva.',
+      'Godham Trust runs cow shelters (goshalas) and a Vridhaashram (old age home) across India, providing rescue, daily feed, medical care and shelter to mother cows and destitute elders. Donate to support Gau Seva or Vridhaashram Seva.',
     path: '/',
   },
   '/gallery': {
     title: 'Gallery — Godham Trust',
-    description: 'Photos from daily life at Godham Trust\'s goshalas.',
+    description: 'Photos from daily life at Godham Trust\'s goshalas and Vridhaashram.',
     path: '/gallery',
   },
 };

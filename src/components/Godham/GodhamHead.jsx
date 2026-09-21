@@ -4,8 +4,8 @@ const SITE_URL = 'https://godhamsevafrontend.vercel.app';
 const OG_IMAGE = `${SITE_URL}/assets/godham/logo.jpg`;
 
 export default function GodhamHead({
-  title = 'Godham Trust — गौ सेवा | Cow Shelter & Welfare',
-  description = 'Godham Trust runs cow shelters (goshalas) across India, providing rescue, daily feed, medical care and shelter to mother cows. Donate to support Gau Seva.',
+  title = 'Godham Trust — गौ सेवा | Cow Shelter & Old Age Home',
+  description = 'Godham Trust runs cow shelters (goshalas) and a Vridhaashram (old age home) across India, providing rescue, daily feed, medical care and shelter to mother cows and destitute elders. Donate to support Gau Seva or Vridhaashram Seva.',
   path = '/',
 }) {
   const url = `${SITE_URL}${path}`;

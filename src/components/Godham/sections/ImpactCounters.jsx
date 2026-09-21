@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 const STATS = [
   { target: 850, suffix: '+', label: 'Cows currently sheltered' },
   { target: 12000, suffix: '+', label: 'Kg of fodder served monthly' },
-  { target: 3, suffix: '', label: 'Goshalas across the region' },
-  { target: 15, suffix: '+', label: 'Years of continuous Gau Seva' },
+  { target: 40, suffix: '+', label: 'Elders cared for at our Vridhaashram' },
+  { target: 15, suffix: '+', label: 'Years of continuous Seva' },
 ];
 
 function Counter({ target, suffix }) {
@@ -54,11 +54,12 @@ export default function ImpactCounters() {
         <div className="impact-head">
           <div>
             <span className="eyebrow">Our Impact</span>
-            <h2 style={{ fontSize: 'clamp(24px,3vw,34px)' }}>Gau Seva, in numbers.</h2>
+            <h2 style={{ fontSize: 'clamp(24px,3vw,34px)' }}>Our Seva, in numbers.</h2>
           </div>
           <p>
             Since our founding, Godham Trust has rescued, sheltered and cared for cows abandoned
-            on streets and highways, giving them a safe, dignified home for the rest of their lives.
+            on streets and highways, and given destitute elders at our Vridhaashram a safe,
+            dignified home for the rest of their lives.
           </p>
         </div>
         <div className="impact-grid">

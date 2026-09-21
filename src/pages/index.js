@@ -5,6 +5,7 @@ import ImpactCounters from '@/components/Godham/sections/ImpactCounters';
 import About from '@/components/Godham/sections/About';
 import Programs from '@/components/Godham/sections/Programs';
 import GalleryPreview from '@/components/Godham/sections/GalleryPreview';
+import Vridhaashram from '@/components/Godham/sections/Vridhaashram';
 import Seva from '@/components/Godham/sections/Seva';
 import Donate from '@/components/Godham/sections/Donate';
 import Donors from '@/components/Godham/sections/Donors';
@@ -22,6 +23,7 @@ export default function GodhamHome() {
         <About />
         <Programs />
         <GalleryPreview />
+        <Vridhaashram />
         <Seva />
         <Donate />
         <Donors />

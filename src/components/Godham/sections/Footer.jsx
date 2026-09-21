@@ -9,7 +9,7 @@ export default function Footer() {
             <a href="/" className="logo">
               <img src="/assets/godham/logo.jpg" alt="Godham Trust logo" style={{ width: 44, height: 44 }} /> Godham Trust
             </a>
-            <p>A registered charitable trust caring for rescued, injured and abandoned cows through shelter, feed and medical care.</p>
+            <p>A registered charitable trust running goshalas for rescued, injured and abandoned cows, and a Vridhaashram providing shelter, food and medical care to destitute elders.</p>
             <div className="foot-social">
               <a href="#">f</a><a href="#">ig</a><a href="#">yt</a><a href="#">wa</a>
             </div>
@@ -30,6 +30,7 @@ export default function Footer() {
               <li><a href="#programs">Daily Feeding</a></li>
               <li><a href="#programs">Medical Care</a></li>
               <li><a href="#programs">Cow Adoption</a></li>
+              <li><a href="#vridhaashram">Vridhaashram</a></li>
             </ul>
           </div>
           <div className="foot-col">
@@ -38,7 +39,7 @@ export default function Footer() {
               <li><a href="#donate">Donate</a></li>
               <li><a href="#seva">Sponsor a Seva</a></li>
               <li><a href="#">Volunteer</a></li>
-              <li><a href="#">Visit the Goshala</a></li>
+              <li><a href="#locate">Visit Us</a></li>
             </ul>
           </div>
           <div className="foot-col">

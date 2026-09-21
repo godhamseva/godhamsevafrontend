@@ -1,5 +1,5 @@
-export async function fetchGallery() {
-  const res = await fetch('/api/godham/gallery', { cache: 'no-store' });
+export async function fetchGallery(category = 'gallery') {
+  const res = await fetch(`/api/godham/gallery?category=${category}`, { cache: 'no-store' });
   const data = await res.json();
   return data.images || [];
 }

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { fetchQr } from '../lib/api';
 import { GODHAM_EMAIL } from '../constants';
 
-export default function QRModal({ open, onClose }) {
+export default function QRModal({ open, onClose, causeName }) {
   const [qr, setQr] = useState(undefined); // undefined = loading, null = none, object = found
 
   useEffect(() => {
@@ -25,7 +25,12 @@ export default function QRModal({ open, onClose }) {
       <div className="qr-modal" onClick={(e) => e.stopPropagation()}>
         <button className="qr-close" onClick={onClose} aria-label="Close">✕</button>
         <h3>Scan & Donate via UPI</h3>
-        <p className="hint">Use any UPI app (GPay, PhonePe, Paytm) to scan and send your Gau Seva contribution directly.</p>
+        <p className="hint">Use any UPI app (GPay, PhonePe, Paytm) to scan and send your Gau Seva or Vridhaashram contribution directly.</p>
+        {causeName && causeName !== 'Wherever Needed' && (
+          <p className="hint" style={{ marginTop: -12 }}>
+            Please mention <strong>&quot;{causeName}&quot;</strong> in your UPI payment note so we allocate it correctly.
+          </p>
+        )}
         <div className="qr-image-wrap">
           {qr === undefined && <span className="qr-placeholder">Loading QR code…</span>}
           {qr === null && (

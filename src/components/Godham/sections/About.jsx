@@ -4,7 +4,7 @@ export default function About() {
       <div className="wrap about-grid">
         <div>
           <span className="eyebrow">About Godham Trust</span>
-          <h2>A home for every mother cow.</h2>
+          <h2>A home for every mother cow — and every elder.</h2>
           <div className="about-art" aria-hidden="true">
             <img
               src="https://images.pexels.com/photos/30147589/pexels-photo-30147589.jpeg?auto=compress&cs=tinysrgb&w=800"
@@ -25,7 +25,16 @@ export default function About() {
             care and a peaceful place to live out their years. We also run outreach and awareness
             programmes encouraging cow protection and organic, cow-based farming in nearby villages.
           </p>
-          <a href="#programs" className="btn btn-outline">See Our Work →</a>
+          <p>
+            Alongside Gau Seva, we run a Vridhaashram — a home for elderly and destitute senior
+            citizens who have nowhere else to turn, offering shelter, nutritious meals, medical
+            care and companionship. To us, Manav Seva and Gau Seva are two sides of the same
+            compassion.
+          </p>
+          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+            <a href="#programs" className="btn btn-outline">See Our Work →</a>
+            <a href="#vridhaashram" className="btn btn-outline">Vridhaashram →</a>
+          </div>
           <div className="quote-block">
             <p className="deva">
               "जो प्रतिदिन गौ माता को चारा और जल अर्पित करता है, उसे अनंत पुण्य की प्राप्ति होती है।"

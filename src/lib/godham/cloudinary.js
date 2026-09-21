@@ -9,6 +9,7 @@ cloudinary.config({
 
 export const GODHAM_GALLERY_FOLDER = 'godham/gallery';
 export const GODHAM_QR_FOLDER = 'godham/qr';
+export const GODHAM_VRIDHAASHRAM_FOLDER = 'godham/vridhaashram';
 
 export function checkAdminPassword(password) {
   const expected = process.env.GODHAM_ADMIN_PASSWORD;
