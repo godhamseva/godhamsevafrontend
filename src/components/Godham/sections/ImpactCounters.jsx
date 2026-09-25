@@ -5,7 +5,7 @@ const STATS = [
   { target: 12000, suffix: '+', label: 'Kg of fodder to be served monthly' },
   { target: 100, suffix: '+', label: 'Elders to be cared for at our Vridhaashram' },
   { target: 5, suffix: '+', label: 'New goshalas & Vridhaashram centres to open' },
-  { target: 15, suffix: '+', label: 'Years of continuous Seva' },
+  // { target: 15, suffix: '+', label: 'Years of continuous Seva' },
 ];
 
 function Counter({ target, suffix }) {
