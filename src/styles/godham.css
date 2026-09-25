@@ -86,19 +86,20 @@
 .godham-site .topbar .wrap { display: flex; justify-content: space-between; align-items: center; padding: 9px 28px; }
 .godham-site .topbar a { opacity: 0.9; transition: opacity .15s; }
 .godham-site .topbar a:hover { opacity: 1; color: var(--saffron); }
-.godham-site .topbar .tb-links { display: flex; gap: 22px; }
+.godham-site .topbar .tb-links { display: flex; gap: 22px; flex-wrap: wrap; }
 .godham-site .topbar .tb-social { display: flex; gap: 14px; }
 
 .godham-site header.site { background: var(--paper); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; }
 .godham-site .nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 28px; }
-.godham-site .logo { display: flex; align-items: center; gap: 12px; font-family: var(--display); font-weight: 700; font-size: 22px; color: var(--brown-deep); }
+.godham-site .logo { white-space: nowrap; display: flex; align-items: center; gap: 12px; font-family: var(--display); font-weight: 700; font-size: 22px; color: var(--brown-deep); }
 .godham-site .logo img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
 .godham-site .logo .sub { display: block; font-family: var(--body); font-weight: 600; font-size: 11px; letter-spacing: 0.06em; color: var(--saffron-deep); text-transform: uppercase; margin-top: 2px; }
-.godham-site .navlinks { display: flex; gap: 28px; align-items: center; }
-.godham-site .navlinks > li > a { font-weight: 600; font-size: 14.5px; letter-spacing: 0.01em; color: var(--brown-deep); position: relative; padding: 6px 2px; }
+.godham-site .navlinks { display: flex; gap: 20px; align-items: center; }
+.godham-site .navlinks > li > a { white-space: nowrap; font-weight: 600; font-size: 14px; letter-spacing: 0.01em; color: var(--brown-deep); position: relative; padding: 6px 2px; }
 .godham-site .navlinks > li > a::after { content: ''; position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--saffron); transition: width .2s; }
 .godham-site .navlinks > li > a:hover::after { width: 100%; }
 .godham-site .nav-actions { display: flex; align-items: center; gap: 14px; }
+.godham-site .nav-actions .btn { white-space: nowrap; padding: 12px 22px; }
 .godham-site .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
 .godham-site .hamburger span { width: 26px; height: 2.5px; background: var(--brown-deep); }
 
@@ -347,10 +348,12 @@
 .godham-site .lightbox-overlay img { max-width: 90vw; max-height: 85vh; border-radius: 4px; }
 .godham-site .lightbox-close { position: absolute; top: 22px; right: 28px; background: none; border: none; color: #fff; font-size: 30px; cursor: pointer; }
 
-@media (max-width: 980px) {
-  .godham-site .navlinks { position: fixed; top: 70px; left: 0; right: 0; background: var(--paper); flex-direction: column; align-items: flex-start; padding: 20px 28px; gap: 16px; border-bottom: 1px solid var(--line); transform: translateY(-130%); transition: transform .25s ease; }
+@media (max-width: 1180px) {
+  .godham-site .navlinks { position: absolute; top: 100%; left: 0; right: 0; background: var(--paper); flex-direction: column; align-items: flex-start; padding: 20px 28px; gap: 16px; border-bottom: 1px solid var(--line); transform: translateY(-130%); transition: transform .25s ease; z-index: 40; }
   .godham-site .navlinks.open { transform: translateY(0); }
   .godham-site .hamburger { display: flex; }
+}
+@media (max-width: 980px) {
   .godham-site .hero-grid { grid-template-columns: 1fr; padding-top: 50px; }
   .godham-site .impact-grid { grid-template-columns: repeat(2,1fr); row-gap: 28px; }
   .godham-site .impact-grid > div:nth-child(3) { border-left: none; padding-left: 0; }
@@ -364,7 +367,9 @@
   .godham-site .foot-grid { grid-template-columns: 1fr 1fr; gap: 34px 24px; }
 }
 @media (max-width: 620px) {
-  .godham-site .topbar .tb-links { display: none; }
+  .godham-site .topbar .tb-links a:not(.tb-address) { display: none; }
+  .godham-site .topbar .tb-social { display: none; }
+  .godham-site .topbar .tb-address { font-size: 12px; }
   .godham-site .prog-grid { grid-template-columns: 1fr; }
   .godham-site .gallery-grid, .godham-site .full-gallery-grid { grid-template-columns: 1fr; }
   .godham-site .accred-grid { grid-template-columns: 1fr; }

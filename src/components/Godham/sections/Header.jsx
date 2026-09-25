@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { GODHAM_PHONE, GODHAM_PHONE_TEL, GODHAM_EMAIL } from '../constants';
+import { GODHAM_PHONE, GODHAM_PHONE_TEL, GODHAM_EMAIL, GODHAM_ADDRESS } from '../constants';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -23,6 +23,7 @@ export default function Header() {
           <div className="tb-links">
             <a href={`tel:${GODHAM_PHONE_TEL}`}>📞 {GODHAM_PHONE}</a>
             <a href={`mailto:${GODHAM_EMAIL}`}>✉ {GODHAM_EMAIL}</a>
+            <a href="/#locate" className="tb-address">📍 {GODHAM_ADDRESS}</a>
           </div>
           <div className="tb-social">
             <a href="#" aria-label="Facebook">Facebook</a>
