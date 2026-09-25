@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
 const STATS = [
-  { target: 850, suffix: '+', label: 'Cows currently sheltered' },
-  { target: 12000, suffix: '+', label: 'Kg of fodder served monthly' },
-  { target: 40, suffix: '+', label: 'Elders cared for at our Vridhaashram' },
+  { target: 800, suffix: '+', label: 'Cows to be sheltered in our goshalas' },
+  { target: 12000, suffix: '+', label: 'Kg of fodder to be served monthly' },
+  { target: 100, suffix: '+', label: 'Elders to be cared for at our Vridhaashram' },
+  { target: 5, suffix: '+', label: 'New goshalas & Vridhaashram centres to open' },
   { target: 15, suffix: '+', label: 'Years of continuous Seva' },
 ];
 
@@ -53,13 +54,13 @@ export default function ImpactCounters() {
       <div className="wrap">
         <div className="impact-head">
           <div>
-            <span className="eyebrow">Our Impact</span>
-            <h2 style={{ fontSize: 'clamp(24px,3vw,34px)' }}>Our Seva, in numbers.</h2>
+            <span className="eyebrow">Looking Ahead</span>
+            <h2 style={{ fontSize: 'clamp(24px,3vw,34px)' }}>Our future targets.</h2>
           </div>
           <p>
-            Since our founding, Godham Trust has rescued, sheltered and cared for cows abandoned
-            on streets and highways, and given destitute elders at our Vridhaashram a safe,
-            dignified home for the rest of their lives.
+            With your support, Godham Trust aims to shelter more abandoned cows and give more
+            destitute elders a safe, dignified home — here is what we are working toward in the
+            coming years.
           </p>
         </div>
         <div className="impact-grid">
