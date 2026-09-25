@@ -1,6 +1,7 @@
 export const GODHAM_PHONE = '+91 75093 50656';
 export const GODHAM_PHONE_TEL = '+917509350656';
 export const GODHAM_EMAIL = 'godhamsevatrust@gmail.com';
+export const GODHAM_INSTAGRAM = 'https://www.instagram.com/godham65';
 export const GODHAM_WHATSAPP = 'https://wa.me/917509350656';
 export const GODHAM_ADDRESS = '845, Part 1, Scheme No. 114, Indore, Madhya Pradesh';
 

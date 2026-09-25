@@ -1,4 +1,4 @@
-import { GODHAM_PHONE, GODHAM_PHONE_TEL, GODHAM_EMAIL, GODHAM_ADDRESS } from '../constants';
+import { GODHAM_PHONE, GODHAM_PHONE_TEL, GODHAM_EMAIL, GODHAM_ADDRESS, GODHAM_INSTAGRAM, GODHAM_WHATSAPP } from '../constants';
 
 export default function Footer() {
   return (
@@ -11,7 +11,7 @@ export default function Footer() {
             </a>
             <p>A registered charitable trust running goshalas for rescued, injured and abandoned cows, and a Vridhaashram providing shelter, food and medical care to destitute elders.</p>
             <div className="foot-social">
-              <a href="#">f</a><a href="#">ig</a><a href="#">yt</a><a href="#">wa</a>
+              <a href="#">f</a><a href={GODHAM_INSTAGRAM} target="_blank" rel="noopener noreferrer" aria-label="Instagram">ig</a><a href="#">yt</a><a href={GODHAM_WHATSAPP} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">wa</a>
             </div>
           </div>
           <div className="foot-col">

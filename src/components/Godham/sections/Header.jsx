@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { GODHAM_PHONE, GODHAM_PHONE_TEL, GODHAM_EMAIL, GODHAM_ADDRESS } from '../constants';
+import { GODHAM_PHONE, GODHAM_PHONE_TEL, GODHAM_EMAIL, GODHAM_ADDRESS, GODHAM_INSTAGRAM } from '../constants';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -27,7 +27,7 @@ export default function Header() {
           </div>
           <div className="tb-social">
             <a href="#" aria-label="Facebook">Facebook</a>
-            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href={GODHAM_INSTAGRAM} target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
             <a href="#" aria-label="YouTube">YouTube</a>
           </div>
         </div>
