@@ -40,6 +40,12 @@ const GODHAM_META_BY_PATH = {
     description: 'Photos from daily life at Godham Trust\'s goshalas and Vridhaashram.',
     path: '/gallery',
   },
+  '/godham/admin': {
+    title: 'Admin — Godham Trust',
+    description: 'Godham Trust content admin.',
+    path: '/godham/admin',
+    noindex: true,
+  },
 };
 export const metadata = {
   title: 'Apt World',

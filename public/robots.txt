@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /godham/admin
+Disallow: /api/
+
+Sitemap: https://godhamsevatrust.org/sitemap.xml

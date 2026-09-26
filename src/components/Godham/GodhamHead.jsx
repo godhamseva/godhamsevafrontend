@@ -1,12 +1,13 @@
 import Head from 'next/head';
 
-const SITE_URL = 'https://godhamsevafrontend.vercel.app';
+const SITE_URL = 'https://godhamsevatrust.org';
 const OG_IMAGE = `${SITE_URL}/assets/godham/logo.jpg`;
 
 export default function GodhamHead({
   title = 'Godham Trust — गौ सेवा | Cow Shelter & Old Age Home',
   description = 'Godham Trust runs cow shelters (goshalas) and a Vridhaashram (old age home) across India, providing rescue, daily feed, medical care and shelter to mother cows and destitute elders. Donate to support Gau Seva or Vridhaashram Seva.',
   path = '/',
+  noindex = false,
 }) {
   const url = `${SITE_URL}${path}`;
 
@@ -15,6 +16,7 @@ export default function GodhamHead({
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
 
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Godham Trust" />
