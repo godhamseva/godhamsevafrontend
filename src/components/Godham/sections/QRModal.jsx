@@ -1,6 +1,32 @@
 import { useEffect, useState } from 'react';
 import { fetchQr } from '../lib/api';
-import { GODHAM_EMAIL } from '../constants';
+import { GODHAM_EMAIL, GODHAM_BANK } from '../constants';
+
+function CopyField({ label, value }) {
+  const [copied, setCopied] = useState(false);
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      // clipboard API unavailable — the value is still visible to copy by hand
+    }
+  };
+
+  return (
+    <div className="bank-row">
+      <div>
+        <span className="bank-label">{label}</span>
+        <span className="bank-value">{value}</span>
+      </div>
+      <button type="button" className="bank-copy" onClick={copy}>
+        {copied ? 'Copied' : 'Copy'}
+      </button>
+    </div>
+  );
+}
 
 export default function QRModal({ open, onClose, causeName }) {
   const [qr, setQr] = useState(undefined); // undefined = loading, null = none, object = found
@@ -39,6 +65,20 @@ export default function QRModal({ open, onClose, causeName }) {
           {qr && <img src={qr.url} alt="Godham Trust donation UPI QR code" />}
         </div>
         {qr === null && <p className="hint" style={{ marginTop: -8, marginBottom: 0 }}>Sample QR shown — upload the real one from the admin panel.</p>}
+
+        <div className="bank-details">
+          <div className="bank-title">Or transfer via Bank / NEFT / RTGS</div>
+          <div className="bank-account-name">{GODHAM_BANK.accountName}</div>
+          <CopyField label="Account Number" value={GODHAM_BANK.accountNumber} />
+          <CopyField label="IFSC Code" value={GODHAM_BANK.ifsc} />
+          <div className="bank-row">
+            <div>
+              <span className="bank-label">Bank</span>
+              <span className="bank-value">{GODHAM_BANK.bankName}</span>
+            </div>
+          </div>
+        </div>
+
         <div className="qr-upi">Godham Trust · {GODHAM_EMAIL}</div>
       </div>
     </div>

@@ -5,6 +5,13 @@ export const GODHAM_INSTAGRAM = 'https://www.instagram.com/godham65';
 export const GODHAM_WHATSAPP = 'https://wa.me/917509350656';
 export const GODHAM_ADDRESS = '845, Part 1, Scheme No. 114, Indore, Madhya Pradesh';
 
+export const GODHAM_BANK = {
+  accountName: 'GODHAM GAU SEVA AVAM VRIDDH KALYAN FOUNDATION INDORE',
+  accountNumber: '2602231314128547',
+  ifsc: 'AUBL0002313',
+  bankName: 'AU Small Finance Bank',
+};
+
 export const FALLBACK_GALLERY = [
   {
     url: 'https://images.pexels.com/photos/33450975/pexels-photo-33450975.jpeg?auto=compress&cs=tinysrgb&w=800',
