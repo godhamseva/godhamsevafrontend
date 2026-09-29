@@ -22,17 +22,17 @@ export default function Donate() {
         <div>
           <span className="eyebrow">Why Donate</span>
           <h2 style={{ fontSize: 'clamp(26px,3.2vw,36px)', marginBottom: 22 }}>Your Seva reaches those who need it, directly.</h2>
-          <ul className="donate-benefits">
-            <li>100% of donations go directly to cow feed & care, or elder shelter & care</li>
-            <li>Tax exemption available under Section 80G of the Income Tax Act</li>
-            <li>Monthly photo & video updates for cow or elder sponsorships</li>
-            <li>Open visiting hours — come meet the cows or elders you support</li>
-            <li>Transparent utilisation reports shared with every donor</li>
+          <ul className="donate-benefits deva">
+            <li>100% दान सीधे गौ चारे और देखभाल, या बुज़ुर्ग आश्रय और देखभाल में जाता है</li>
+            <li>Income Tax Act की Section 80G के तहत टैक्स छूट उपलब्ध है</li>
+            <li>गाय या बुज़ुर्ग प्रायोजन के लिए हर महीने फोटो और वीडियो अपडेट</li>
+            <li>खुले visiting hours — आप जिनकी सेवा करते हैं उनसे मिल सकते हैं</li>
+            <li>हर दाता के साथ पारदर्शी उपयोग रिपोर्ट साझा की जाती है</li>
           </ul>
         </div>
         <div className="donate-card">
           <h3>Make a Donation</h3>
-          <p>All amounts in INR (₹). Choose a cause, an amount, or scan our QR to pay instantly via UPI.</p>
+          <p className="deva">सारी राशि INR (₹) में है। एक कारण चुनें, राशि तय करें, या UPI से तुरंत भुगतान के लिए हमारा QR scan करें।</p>
           <div className="donate-label">Donate towards</div>
           <div className="amount-grid cause-grid">
             {CAUSES.map((c) => (

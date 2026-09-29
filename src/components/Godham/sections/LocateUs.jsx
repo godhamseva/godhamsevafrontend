@@ -11,7 +11,7 @@ export default function LocateUs() {
         <div className="section-head">
           <span className="eyebrow">Visit Us</span>
           <h2>Locate our office.</h2>
-          <p>Come meet the cows and elders you support. Click the map to open it directly in Google Maps for directions.</p>
+          <p className="deva">जिन गायों और बुज़ुर्गों की आप सेवा करते हैं उनसे मिलने आएं। Google Maps में सीधे रास्ता पाने के लिए map पर click करें।</p>
           <p style={{ marginTop: 18, fontWeight: 600, color: 'var(--brown-deep)' }}>
             📍 {GODHAM_ADDRESS}
           </p>

@@ -3,6 +3,7 @@ import GodhamHead from '@/components/Godham/GodhamHead';
 import GodhamLayout from '@/components/Godham/GodhamLayout';
 import { fetchGallery } from '@/components/Godham/lib/api';
 import { FALLBACK_GALLERY } from '@/components/Godham/constants';
+import { devaClass } from '@/components/Godham/lib/text';
 
 export default function GodhamGalleryPage() {
   const [images, setImages] = useState(null);
@@ -26,7 +27,7 @@ export default function GodhamGalleryPage() {
   const showFallback = !images || images.length === 0;
   const items = showFallback
     ? FALLBACK_GALLERY
-    : images.map((img) => ({ url: img.url, title: img.caption || 'From our goshala', caption: img.caption || 'A moment from daily life at Godham Trust.' }));
+    : images.map((img) => ({ url: img.url, title: img.caption || 'हमारी गौशाला से', caption: img.caption || 'गोधाम ट्रस्ट में रोज़ की ज़िंदगी का एक पल।' }));
 
   return (
     <>
@@ -36,10 +37,10 @@ export default function GodhamGalleryPage() {
           <div className="wrap section-head">
             <span className="eyebrow">Photo Gallery</span>
             <h2>Life at Godham Trust, in pictures.</h2>
-            <p>
+            <p className="deva">
               {showFallback
-                ? 'Sample photos shown below — real photographs uploaded from the admin panel will appear here automatically.'
-                : `${items.length} photo${items.length === 1 ? '' : 's'} shared by our team.`}
+                ? 'नीचे सैंपल फोटो दिखाई गई हैं — एडमिन पैनल से अपलोड की गई असली तस्वीरें यहाँ अपने आप दिखेंगी।'
+                : `हमारी टीम द्वारा साझा की गई ${items.length} तस्वीर${items.length === 1 ? '' : 'ें'}।`}
             </p>
           </div>
         </section>
@@ -52,8 +53,8 @@ export default function GodhamGalleryPage() {
                     <img src={item.url} alt={item.title} loading="lazy" />
                   </div>
                   <div className="cap">
-                    <h4>{item.title}</h4>
-                    <p>{item.caption}</p>
+                    <h4 className={devaClass(item.title)}>{item.title}</h4>
+                    <p className={devaClass(item.caption)}>{item.caption}</p>
                   </div>
                 </div>
               ))}

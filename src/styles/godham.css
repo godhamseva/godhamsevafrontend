@@ -46,7 +46,7 @@
 .godham-site h1, .godham-site h2, .godham-site h3, .godham-site h4 {
   font-family: var(--display); font-weight: 600; line-height: 1.1; letter-spacing: -0.01em;
 }
-.godham-site .deva { font-family: var(--deva); }
+.godham-site .deva { font-family: var(--deva) !important; }
 .godham-site .eyebrow {
   font-family: var(--mono); text-transform: uppercase; font-size: 12.5px;
   letter-spacing: 0.14em; color: var(--saffron-deep); font-weight: 700;
@@ -393,11 +393,30 @@
   /* Cut down the large fixed section padding so a phone screen shows more
      than one heading's worth of content before the user has to scroll. */
   .godham-site .hero-grid { padding: 36px 18px 32px; }
-  .godham-site .hero h1 { margin-bottom: 14px; }
-  .godham-site .hero p.lead { margin-bottom: 22px; }
+  .godham-site .hero h1 { font-size: 30px; margin-bottom: 14px; }
+  .godham-site .hero p.lead { font-size: 15px; margin-bottom: 22px; }
   .godham-site .hero-ctas { margin-bottom: 26px; }
+  .godham-site .hero-ctas .btn { font-size: 13.5px; padding: 11px 18px; }
+  .godham-site .hero-stats .num { font-size: 20px; }
+  .godham-site .hero-stats .lbl { font-size: 10.5px; }
   .godham-site .impact { padding: 36px 0 28px; }
-  .godham-site .impact-grid .num { font-size: 32px; }
+  .godham-site .impact-grid .num { font-size: 30px; }
+  .godham-site .impact-grid .lbl { font-size: 12.5px; }
+
+  /* General text scale-down — headings, body copy and buttons all read as
+     too large on a phone screen at the desktop sizes. */
+  .godham-site h1 { font-size: 30px; }
+  .godham-site h2 { font-size: 24px !important; }
+  .godham-site h3 { font-size: 17px; }
+  .godham-site h4 { font-size: 14.5px; }
+  .godham-site .section-head p { font-size: 14.5px; margin-top: 10px; }
+  .godham-site .eyebrow { font-size: 11px; }
+  .godham-site p, .godham-site li, .godham-site .prog-card p, .godham-site .gallery-card .cap p,
+  .godham-site .about-copy p, .godham-site .donate-benefits li, .godham-site .seva-row {
+    font-size: 13.5px;
+  }
+  .godham-site .btn { font-size: 13.5px; padding: 11px 18px; }
+  .godham-site .quote-block p.deva { font-size: 15px; }
   .godham-site .about,
   .godham-site .programs,
   .godham-site .gallery,

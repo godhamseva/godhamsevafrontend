@@ -9,7 +9,7 @@ export default function Footer() {
             <a href="/" className="logo">
               <img src="/assets/godham/logo.jpg" alt="Godham Trust logo" style={{ width: 44, height: 44 }} /> Godham Trust
             </a>
-            <p>A registered charitable trust running goshalas for rescued, injured and abandoned cows, and a Vridhaashram providing shelter, food and medical care to destitute elders.</p>
+            <p className="deva">एक पंजीकृत धर्मार्थ ट्रस्ट जो बचाई गई, घायल और लावारिस गायों के लिए गौशाला चलाता है, और एक वृद्धाश्रम जो ज़रूरतमंद बुज़ुर्गों को आश्रय, भोजन और चिकित्सा देखभाल देता है।</p>
             <div className="foot-social">
               <a href="#">f</a><a href={GODHAM_INSTAGRAM} target="_blank" rel="noopener noreferrer" aria-label="Instagram">ig</a><a href="#">yt</a><a href={GODHAM_WHATSAPP} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">wa</a>
             </div>

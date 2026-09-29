@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
 const STATS = [
-  { target: 800, suffix: '+', label: 'Cows to be sheltered in our goshalas' },
-  { target: 12000, suffix: '+', label: 'Kg of fodder to be served monthly' },
-  { target: 100, suffix: '+', label: 'Elders to be cared for at our Vridhaashram' },
-  { target: 5, suffix: '+', label: 'New goshalas & Vridhaashram centres to open' },
-  // { target: 15, suffix: '+', label: 'Years of continuous Seva' },
+  { target: 800, suffix: '+', label: 'गौशाला में गायों को आश्रय' },
+  { target: 12000, suffix: '+', label: 'किग्रा चारा हर महीने' },
+  { target: 100, suffix: '+', label: 'वृद्धाश्रम में बुज़ुर्गों की सेवा' },
+  { target: 5, suffix: '+', label: 'नए गौशाला और वृद्धाश्रम केंद्र' },
 ];
 
 function Counter({ target, suffix }) {
@@ -57,17 +56,17 @@ export default function ImpactCounters() {
             <span className="eyebrow">Looking Ahead</span>
             <h2 style={{ fontSize: 'clamp(24px,3vw,34px)' }}>Our future targets.</h2>
           </div>
-          <p>
-            With your support, Godham Trust aims to shelter more abandoned cows and give more
-            destitute elders a safe, dignified home — here is what we are working toward in the
-            coming years.
+          <p className="deva">
+            आपके सहयोग से, गोधाम ट्रस्ट और ज़्यादा लावारिस गायों को आश्रय देना और और ज़्यादा
+            ज़रूरतमंद बुज़ुर्गों को एक सुरक्षित, सम्मान भरा घर देना चाहता है — यह है जिसके लिए हम
+            आने वाले सालों में काम कर रहे हैं।
           </p>
         </div>
         <div className="impact-grid">
           {STATS.map((s) => (
             <div key={s.label}>
               <Counter target={s.target} suffix={s.suffix} />
-              <div className="lbl">{s.label}</div>
+              <div className="lbl deva">{s.label}</div>
             </div>
           ))}
         </div>

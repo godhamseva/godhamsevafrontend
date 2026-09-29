@@ -1,8 +1,8 @@
 const DONORS = [
-  { initial: 'R', name: 'Ramesh Patel', desc: 'donated for feed', when: '2 days ago', amt: '₹2,100' },
-  { initial: 'S', name: 'Sunita Sharma', desc: 'sponsored a cow', when: '5 days ago', amt: '₹3,000' },
-  { initial: 'A', name: 'Anand Joshi', desc: 'donated for medical care', when: '1 week ago', amt: '₹5,100' },
-  { initial: 'M', name: 'Meena Verma', desc: 'donated for feed', when: '2 weeks ago', amt: '₹1,100' },
+  { initial: 'R', name: 'Ramesh Patel', desc: 'चारे के लिए दान दिया', when: '2 दिन पहले', amt: '₹2,100' },
+  { initial: 'S', name: 'Sunita Sharma', desc: 'एक गाय प्रायोजित की', when: '5 दिन पहले', amt: '₹3,000' },
+  { initial: 'A', name: 'Anand Joshi', desc: 'चिकित्सा के लिए दान दिया', when: '1 हफ्ते पहले', amt: '₹5,100' },
+  { initial: 'M', name: 'Meena Verma', desc: 'चारे के लिए दान दिया', when: '2 हफ्ते पहले', amt: '₹1,100' },
 ];
 
 export default function Donors() {
@@ -17,7 +17,7 @@ export default function Donors() {
           {DONORS.map((d) => (
             <div className="donor-row" key={d.name}>
               <div className="donor-avatar">{d.initial}</div>
-              <div className="donor-info"><b>{d.name}</b> {d.desc} &middot; {d.when}</div>
+              <div className="donor-info deva"><b>{d.name}</b> {d.desc} &middot; {d.when}</div>
               <div className="donor-amt">{d.amt}</div>
             </div>
           ))}
